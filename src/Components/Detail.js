@@ -1,10 +1,14 @@
+import { logDOM } from "@testing-library/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 function Detail() {
+    let token;
+    let headers;
     const [detail, setDetail] = useState({});
     const { id } = useParams();
+    console.log(id);
 
 
     const [isReadMore, setIsReadMore] = useState(false);
@@ -12,7 +16,9 @@ function Detail() {
         setIsReadMore(!isReadMore);
     };
     useEffect(() => {
-        axios.get(`https://fakestoreapi.com/products/${id}`)
+        token=localStorage.getItem("token");
+        headers={"token":token};
+        axios.get(`http://localhost:8000/product/all/${id}`,{headers:headers})
             .then(response => {
                 setDetail(response.data);
                 setIsReadMore(true);
@@ -36,7 +42,7 @@ function Detail() {
                             <>show less<i className="fa fa-angle-up" style={{margin:"5px",justifyContent:"center"}} ></i></>}
                         </span>
                     </p>
-                    <h4>Price : <span className="card-price">${detail.price}</span></h4>
+                    {/* <h4>Price : <span className="card-price">${detail.price}</span></h4> */}
                 </div>
             </div>
         </>

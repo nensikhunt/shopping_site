@@ -30,18 +30,18 @@ function Cart() {
                                             </div>
                                         </div>
                                         <div className="cart-price">
-                                            <span className="cart-value">Price : <span className="card-price">${value.price}</span></span>
+                                            <span className="cart-value">Price : <span className="card-price">${value.sizes[0].price}</span></span>
                                         </div>
                                         <div className="cart-quntity">
                                             <span className="cart-value">Quantity : &nbsp;
                                                 <button className="quantity-btn" onClick={() => dispatch(decrementProductAction(value))}>-</button>
-                                                <span className="card-price">{value.quantity }</span>
+                                                <span className="card-price">{value.quantity}</span>
                                                 <button className="quantity-btn" onClick={() => dispatch(incrementProductAction(value))}>+</button>
                                             </span>
                                         </div>
                                         <div className="cart-total">
                                             <span className="cart-value">Total :&nbsp;
-                                                <span className="card-price">${value.price * value.quantity}</span>
+                                                <span className="card-price">${value.sizes[0].price * value.quantity}</span>
                                                 <span className="card-price"></span>
                                             </span>
                                             <button className="btn" onClick={() => dispatch(removeProductAction(value))}>remove</button>

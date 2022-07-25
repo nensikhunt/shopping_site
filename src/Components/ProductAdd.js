@@ -18,6 +18,7 @@ function ProductAdd() {
             ...productData,
             [e.target.name]: e.target.value
         })
+        console.log(e.target.value);
     }
 
     const productDetail = async (e) => {
@@ -48,17 +49,17 @@ function ProductAdd() {
             <h4 className="cart-h4">Product add</h4>
             <form>
                 Title:
-                <input type={"text"} name="title" value={productData.title} onChange={productDataChange} /><br />
+                <input type={"text"} name="title"  onChange={productDataChange} /><br />
                 Description:
-                <input type={"text"} name="description" value={productData.description} onChange={productDataChange} /><br />
+                <input type={"text"} name="description"  onChange={productDataChange} /><br />
                 Image:
-                <input type={"file"} name="images" value={productData.images} onChange={productDataChange} /><br />
+                <input type={"file"} name="images"  onChange={productDataChange} /><br />
                 Color:
-                <input type={"text"} name="color" value={productData.color} onChange={productDataChange} /><br />
+                <input type={"text"} name="color"  onChange={productDataChange} /><br />
                 Size:
-                <input type={"text"} name="size" value={productData.size} onChange={productDataChange} /><br />
+                <input type={"text"} name="size"  onChange={productDataChange} /><br />
                 Price:
-                <input type={"text"} name="price" value={productData.price} onChange={productDataChange} /><br />
+                <input type={"text"} name="price" onChange={productDataChange} /><br />
                 <button onClick={productDetail}>add product</button>
             </form>
         </>
