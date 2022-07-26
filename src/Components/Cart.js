@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { useNavigate } from "react-router";
 import { decrementProductAction, incrementProductAction, removeProductAction, removeAllProductAction } from "../Store/Action/ProductAction";
 
 function Cart() {
     const cartProducts = useSelector(state => state.cartProduct);
     const cartProductLength = cartProducts.length;
-    const state = useSelector(state => state.count);
     const dispatch = useDispatch();
 
     return (
@@ -18,7 +15,6 @@ function Cart() {
                     <div className="add-to-cart">
                         {
                             cartProducts.map((value, index) => {
-                                // value.quantity=1;
                                 return (
                                     <div className="cart-div-main" key={index}>
                                         <div className="cart-product-div">
@@ -34,7 +30,10 @@ function Cart() {
                                         </div>
                                         <div className="cart-quntity">
                                             <span className="cart-value">Quantity : &nbsp;
-                                                <button className="quantity-btn" onClick={() => dispatch(decrementProductAction(value))}>-</button>
+                                            {
+                                                value.quantity<=1?<button className="btn" onClick={() => dispatch(removeProductAction(value))}>remove</button>:<button className="quantity-btn" onClick={() => dispatch(decrementProductAction(value))}>-</button>
+                                            }
+                                                {/* <button className="quantity-btn" onClick={() => dispatch(decrementProductAction(value))}>-</button> */}
                                                 <span className="card-price">{value.quantity}</span>
                                                 <button className="quantity-btn" onClick={() => dispatch(incrementProductAction(value))}>+</button>
                                             </span>

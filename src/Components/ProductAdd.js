@@ -7,10 +7,12 @@ function ProductAdd() {
     const [productData, setproductData] = useState({
         title: "",
         description: "",
-        images:"",
         color: "",
         size: "",
         price: "",
+    })
+    const [imgfile, setimageFile] = useState({
+        image: ""
     })
 
     const productDataChange = (e) => {
@@ -18,15 +20,26 @@ function ProductAdd() {
             ...productData,
             [e.target.name]: e.target.value
         })
-        console.log(e.target.value);
+        // console.log(e.target.value);
+    }
+    const productImageDataChange = (e) => {
+        setimageFile({
+            image: e.target.files[0]
+        })
     }
 
     const productDetail = async (e) => {
-        token = localStorage.getItem("token");
-        headers = { "token": token }
-        console.log(headers);
         e.preventDefault();
-        await axios.post("http://localhost:8000/product/add", productData, { headers: headers })
+        token = localStorage.getItem("token");
+        headers = { "token": token, "Content-type": "multipart/form-data" }
+        const formData = new FormData();
+        formData.append('image', imgfile.image);
+        formData.append('title', productData.title);
+        formData.append('description', productData.description);
+        formData.append('color', productData.color);
+        formData.append('size', productData.size);
+        formData.append('price', productData.price);
+        await axios.post("http://localhost:8000/product/add", formData, { headers: headers })
             .then((response) => {
                 console.log(response.data);
             })
@@ -38,7 +51,6 @@ function ProductAdd() {
             ...productData,
             title: "",
             description: "",
-            images:"",
             color: "",
             size: "",
             price: ""
@@ -49,17 +61,17 @@ function ProductAdd() {
             <h4 className="cart-h4">Product add</h4>
             <form>
                 Title:
-                <input type={"text"} name="title"  onChange={productDataChange} /><br />
+                <input type={"text"} name="title" value={productData.title} onChange={productDataChange} /><br />
                 Description:
-                <input type={"text"} name="description"  onChange={productDataChange} /><br />
+                <input type={"text"} name="description" value={productData.description} onChange={productDataChange} /><br />
                 Image:
-                <input type={"file"} name="images"  onChange={productDataChange} /><br />
+                <input type={"file"} name="images" value={productData.images} onChange={productImageDataChange} /><br />
                 Color:
-                <input type={"text"} name="color"  onChange={productDataChange} /><br />
+                <input type={"text"} name="color" value={productData.color} onChange={productDataChange} /><br />
                 Size:
-                <input type={"text"} name="size"  onChange={productDataChange} /><br />
+                <input type={"text"} name="size" value={productData.size} onChange={productDataChange} /><br />
                 Price:
-                <input type={"text"} name="price" onChange={productDataChange} /><br />
+                <input type={"text"} name="price" value={productData.price} onChange={productDataChange} /><br />
                 <button onClick={productDetail}>add product</button>
             </form>
         </>

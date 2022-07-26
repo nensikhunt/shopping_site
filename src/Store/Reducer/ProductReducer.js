@@ -32,7 +32,6 @@ export const cartProductReducer = (state = cartProducts, { type, payload }) => {
         case ProductType.INCREMENTPRODUCTTYPE:
             let increse = state.map((value) => {
                 if (value.id === payload.id) {
-                    console.log(payload.quantity);
                     return ({ ...value, quantity: value.quantity + 1 })
                 }
                 return value;
@@ -41,8 +40,12 @@ export const cartProductReducer = (state = cartProducts, { type, payload }) => {
         case ProductType.DECREMENTPRODUCTTYPE:
             let decrese = state.map((value) => {
                 if (value.id === payload.id) {
-                    console.log(payload.quantity);
-                    return ({ ...value, quantity: value.quantity - 1 })
+                    if(value.quantity<=0){
+                        return ({ ...value, quantity: value.quantity =0 })
+                    }else{
+                        return ({ ...value, quantity: value.quantity - 1 })
+                    }
+                    
                 }
                 return value;
             })
