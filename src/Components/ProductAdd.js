@@ -12,7 +12,7 @@ function ProductAdd() {
         price: "",
     })
     const [imgfile, setimageFile] = useState({
-        image: ""
+        images: ""
     })
 
     const productDataChange = (e) => {
@@ -24,7 +24,7 @@ function ProductAdd() {
     }
     const productImageDataChange = (e) => {
         setimageFile({
-            image: e.target.files[0]
+            images: e.target.files[0]
         })
     }
 
@@ -33,7 +33,7 @@ function ProductAdd() {
         token = localStorage.getItem("token");
         headers = { "token": token, "Content-type": "multipart/form-data" }
         const formData = new FormData();
-        formData.append('image', imgfile.image);
+        formData.append('image', imgfile.images);
         formData.append('title', productData.title);
         formData.append('description', productData.description);
         formData.append('color', productData.color);

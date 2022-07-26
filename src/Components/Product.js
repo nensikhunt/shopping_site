@@ -40,7 +40,7 @@ function Product() {
                         return (
                             
                             <div className="card m-9" key={index} style={{ width: "18rem", margin: "10px" }}>
-                                <img src={value.image} className="card-img-top" alt="New Spring Fall" style={{ width: "200px", height: "200px", margin: "auto" }}  onClick={()=>navigate(`/product/${value.id}`)} />
+                                <img src={value.images} className="card-img-top" alt="New Spring Fall" style={{ width: "200px", height: "200px", margin: "auto" }}  onClick={()=>navigate(`/product/${value.id}`)} />
                                 <div className="card-body">
                                     <h5 className="card-title"  onClick={()=>navigate(`/product/${value.id}`)}>{value.title}</h5>
                                     {/* <h4>Price : <span className="card-price">${value.sizes[0].price}</span></h4>

@@ -15,9 +15,9 @@ function Detail() {
         setIsReadMore(!isReadMore);
     };
     useEffect(() => {
-        token=localStorage.getItem("token");
-        headers={"token":token};
-        axios.get(`http://localhost:8000/product/all/${id}`,{headers:headers})
+        token = localStorage.getItem("token");
+        headers = { "token": token };
+        axios.get(`http://localhost:8000/product/all/${id}`, { headers: headers })
             .then(response => {
                 setDetail(response.data);
                 setIsReadMore(true);
@@ -26,7 +26,7 @@ function Detail() {
                 console.log(e);
             })
     }, [])
-
+    console.log(detail);
 
     return (
         <>
@@ -37,8 +37,8 @@ function Detail() {
                     <p className="card-text">
                         {isReadMore ? detail.description.slice(0, 100) : detail.description}
                         <span onClick={toggleReadMore} className="read-or-hide">
-                            {isReadMore ? <>...read more<i className="fa fa-angle-down" style={{margin:"5px",justifyContent:"center"}}></i></>: 
-                            <>show less<i className="fa fa-angle-up" style={{margin:"5px",justifyContent:"center"}} ></i></>}
+                            {isReadMore ? <>...read more<i className="fa fa-angle-down" style={{ margin: "5px", justifyContent: "center" }}></i></> :
+                                <>show less<i className="fa fa-angle-up" style={{ margin: "5px", justifyContent: "center" }} ></i></>}
                         </span>
                     </p>
                     {/* <h4>Price : <span className="card-price">${detail.price}</span></h4> */}
