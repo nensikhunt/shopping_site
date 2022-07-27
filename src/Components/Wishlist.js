@@ -22,7 +22,7 @@ function Wishlist() {
                                     <div className="cart-div-main" key={index}>
                                         <div className="cart-product-div">
                                             <div className="cart-image">
-                                                <img src={value.image} className="product-image" alt={value.title} />
+                                                <img src={value.images} className="product-image" alt={value.title} />
                                             </div>
                                             <div className="cart-title">
                                                 <h6 className="product-title">{value.title}</h6>

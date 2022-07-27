@@ -11,8 +11,7 @@ function Total() {
     return (
         <>
             <h4 className="cart-h4">Total</h4>
-            {/* <h4>total amount : $ {totalAmount.price}</h4> */}
-            <h1>total price :{cartProducts.reduce((total, item)=>total+(item.sizes[0].price*item.quantity),0)}</h1>
+            <h1>total price :${cartProducts.reduce((total, item)=>total+(item.sizes[0].price*item.quantity),0)}</h1>
         </>
     );
 }

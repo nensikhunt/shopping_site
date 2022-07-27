@@ -45,6 +45,7 @@
   justify-content: center;
   align-items: center;
   padding: 5%;
+  line-height: 50px;
 }
 .cart-price{
   margin-right: 5%;
@@ -69,4 +70,9 @@
 }
 .active{
   color: black;
+}
+.product-title{
+  line-height: 1.5;
+  vertical-align: middle;
+  display: inline-block;
 }

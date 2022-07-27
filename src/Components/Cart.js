@@ -19,7 +19,7 @@ function Cart() {
                                     <div className="cart-div-main" key={index}>
                                         <div className="cart-product-div">
                                             <div className="cart-image">
-                                                <img src={value.image} className="product-image" alt={value.title} />
+                                                <img src={value.images} className="product-image" alt={value.title} />
                                             </div>
                                             <div className="cart-title">
                                                 <h6 className="product-title">{value.title}</h6>
@@ -30,10 +30,9 @@ function Cart() {
                                         </div>
                                         <div className="cart-quntity">
                                             <span className="cart-value">Quantity : &nbsp;
-                                            {
-                                                value.quantity<=1?<button className="btn" onClick={() => dispatch(removeProductAction(value))}>remove</button>:<button className="quantity-btn" onClick={() => dispatch(decrementProductAction(value))}>-</button>
-                                            }
-                                                {/* <button className="quantity-btn" onClick={() => dispatch(decrementProductAction(value))}>-</button> */}
+                                                {
+                                                    value.quantity <= 1 ? <button className="btn" onClick={() => dispatch(removeProductAction(value))}>remove</button> : <button className="quantity-btn" onClick={() => dispatch(decrementProductAction(value))}>-</button>
+                                                }
                                                 <span className="card-price">{value.quantity}</span>
                                                 <button className="quantity-btn" onClick={() => dispatch(incrementProductAction(value))}>+</button>
                                             </span>
@@ -43,18 +42,20 @@ function Cart() {
                                                 <span className="card-price">${value.sizes[0].price * value.quantity}</span>
                                                 <span className="card-price"></span>
                                             </span>
-                                            <button className="btn" onClick={() => dispatch(removeProductAction(value))}>remove</button>
+                                            <button className="btn" onClick={() => dispatch(removeProductAction(value))}>delete</button>
                                         </div>
                                     </div>
                                 )
                             })
                         }
                         <button className="btn" onClick={() => dispatch(removeAllProductAction())}>remove all item</button>
-                        <Link className="btn" to="/total">Total Amount</Link>
+                        <Link className="btn" to="/total">Proced To Checkout</Link>
+                        <span>Total Amount : ${cartProducts.reduce((total, item) => total + (item.sizes[0].price * item.quantity), 0)}</span>&nbsp;
+                        <span>Total Quantity : {cartProducts.reduce((total, item) => total + item.quantity, 0)}</span>
                     </div> :
                     <div className="add-to-cart">
                         <div className="cart-div-main">
-                            <h3>you have not purchesd our product</h3>
+                            <h3>Your Shopping Cart is empty</h3>
                         </div>
                     </div>
             }

@@ -24,6 +24,7 @@ function ProductAdd() {
     }
     const productImageDataChange = (e) => {
         setimageFile({
+            ...imgfile,
             images: e.target.files[0]
         })
     }
@@ -47,14 +48,19 @@ function ProductAdd() {
                 console.log(e);
             })
 
-        setproductData({
-            ...productData,
-            title: "",
-            description: "",
-            color: "",
-            size: "",
-            price: ""
-        })
+        // setproductData({
+        //     ...productData,
+        //     title: "",
+        //     description: "",
+        //     color: "",
+        //     size: "",
+        //     price: ""
+        // })
+
+        // setimageFile({
+        //     ...imgfile,
+        //     images:""
+        // })
     }
     return (
         <>
@@ -63,7 +69,8 @@ function ProductAdd() {
                 Title:
                 <input type={"text"} name="title" value={productData.title} onChange={productDataChange} /><br />
                 Description:
-                <input type={"text"} name="description" value={productData.description} onChange={productDataChange} /><br />
+                <textarea cols={50} rows={5} type={"text"} name="description" value={productData.description} onChange={productDataChange} /> <br />
+                {/* <input type={"text"} name="description" value={productData.description} onChange={productDataChange} /><br /> */}
                 Image:
                 <input type={"file"} name="images" value={productData.images} onChange={productImageDataChange} /><br />
                 Color:

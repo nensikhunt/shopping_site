@@ -17,18 +17,18 @@ function Product() {
     }, [])
 
     const getproducts = async () => {
-        token=localStorage.getItem("token");
-        headers={"token":token};
+        token = localStorage.getItem("token");
+        headers = { "token": token };
         // console.log(headers);
-        const product = await axios.get("http://localhost:8000/product/all",{headers:headers})
+        const product = await axios.get("http://localhost:8000/product/all", { headers: headers })
             .catch(e => {
                 console.log(e);
-            })            
+            })
         setEffect(true);
         dispatch(productAction(product.data.data));
         // console.log("res",product);
     }
-// console.log(products);
+    // console.log(products);
     return (
         <>
             <h4 className="cart-h4">Our Products</h4>
@@ -38,11 +38,11 @@ function Product() {
                     products?.map((value, index) => {
                         // {console.log(value.id)}
                         return (
-                            
+
                             <div className="card m-9" key={index} style={{ width: "18rem", margin: "10px" }}>
-                                <img src={value.images} className="card-img-top" alt="New Spring Fall" style={{ width: "200px", height: "200px", margin: "auto" }}  onClick={()=>navigate(`/product/${value.id}`)} />
+                                <img src={value.images} className="card-img-top" alt="New Spring Fall" style={{ width: "200px", height: "200px", margin: "auto", cursor: "pointer" }} onClick={() => navigate(`/product/${value.id}`)} />
                                 <div className="card-body">
-                                    <h5 className="card-title"  onClick={()=>navigate(`/product/${value.id}`)}>{value.title}</h5>
+                                    <h5 className="card-title" onClick={() => navigate(`/product/${value.id}`)} style={{ cursor: "pointer" }}>{value.title}</h5>
                                     {/* <h4>Price : <span className="card-price">${value.sizes[0].price}</span></h4>
                                     <h4>Size : <span className="card-price">{value.sizes[0].size}</span></h4> */}
                                     {/* {console.log("sizes",index,value.sizes[1])} */}
