@@ -9,6 +9,11 @@ import ProductAdd from "./ProductAdd";
 import Register from "./Register";
 import Total from "./Total";
 import Wishlist from "./Wishlist";
+import './Detail.css';
+import './Product.css';
+import AddressMethod from "./AddressMethod";
+import PaymentMethod from "./PaymentMethod";
+import SummaryMethod from "./SummaryMethod";
 
 function Navbar() {
     const cartProducts = useSelector(state => state.cartProduct);
@@ -44,7 +49,7 @@ function Navbar() {
                         </ul>
                         <Link className="nav-link" to="/cart">
                             <i className="fa fa-shopping-cart" style={{ fontSize: "36px",color:"#f7a099" }}></i>
-                            <span style={{ fontSize: "20px",fontWeight:"400" /*backgroundColor:"black",color:"white",margin:"5px",padding:"3px",borderRadius:"100px",paddingLeft:"5px",paddingRight:"5px",*/ }}>{cartItem}</span>
+                            <span style={{ fontSize: "20px",fontWeight:"400" }}>{cartItem}</span>
                         </Link>
                     </div>
                 </div>
@@ -54,6 +59,9 @@ function Navbar() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/product" element={<Product />} />
                 <Route path="/total" element={<Total />} />
+                <Route path="/addressmethod" element={<AddressMethod />} />
+                <Route path="/paymentmethod" element={<PaymentMethod />} />
+                <Route path="/summarymethod" element={<SummaryMethod />} />
                 <Route path="/product/:id" element={<Detail />} />
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/signup" element={<Register />} />

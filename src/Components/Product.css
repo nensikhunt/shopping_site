@@ -1,0 +1,9 @@
+.card:hover{
+  box-shadow: 5px 4px 10px grey;
+}
+.notselected{
+background-color: pink;
+}
+.selected{
+  background-color: blue;
+}

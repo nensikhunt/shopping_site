@@ -1,0 +1,18 @@
+.detail{
+    display: flex;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+.detail-image{
+    width: 40%;
+    /* border: 1px solid black; */
+}
+.detail-body{
+    width: 60%;
+}
+.detail-text{
+    box-shadow: 5px 5px 10px grey;
+    margin: 3%;
+    margin-top: 0%;
+    padding: 3%;
+}

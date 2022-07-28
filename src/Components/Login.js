@@ -19,9 +19,7 @@ function Login() {
         e.preventDefault();
         await axios.post("http://localhost:8000/user/login", loginData)
             .then((response) => {
-                console.log(response.data);
                 token=response.data.token;
-                console.log(token);
                 localStorage.setItem("token",token);
             })
             .catch((e) => {

@@ -12,7 +12,7 @@ function ProductAdd() {
         price: "",
     })
     const [imgfile, setimageFile] = useState({
-        images: ""
+        images: []
     })
 
     const productDataChange = (e) => {
@@ -20,7 +20,6 @@ function ProductAdd() {
             ...productData,
             [e.target.name]: e.target.value
         })
-        // console.log(e.target.value);
     }
     const productImageDataChange = (e) => {
         setimageFile({
@@ -70,7 +69,6 @@ function ProductAdd() {
                 <input type={"text"} name="title" value={productData.title} onChange={productDataChange} /><br />
                 Description:
                 <textarea cols={50} rows={5} type={"text"} name="description" value={productData.description} onChange={productDataChange} /> <br />
-                {/* <input type={"text"} name="description" value={productData.description} onChange={productDataChange} /><br /> */}
                 Image:
                 <input type={"file"} name="images" value={productData.images} onChange={productImageDataChange} /><br />
                 Color:

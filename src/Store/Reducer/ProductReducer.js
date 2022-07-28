@@ -20,13 +20,6 @@ export const cartProductReducer = (state = cartProducts, { type, payload }) => {
         case ProductType.CARTPRODUCTTYPE:
             let tempcart = state.filter((props) => props.id === payload.id)
             if (tempcart < 1) {
-                let increse = state.map((value) => {
-                    if (value.id === payload.id) {
-                        return ({ ...value, quantity: value.quantity + 1 })
-                    }
-                    return value;
-                })
-                // return increse;
                 return [...state, payload]
             }
             else {
