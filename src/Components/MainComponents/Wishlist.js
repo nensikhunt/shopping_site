@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { removeAllWishlistProductAction, removeWishlistProductAction } from "../Store/Action/ProductAction";
+import { removeAllWishlistProductAction, removeWishlistProductAction } from "../../Store/Action/ProductAction";
 
 function Wishlist() {
     const wishlistProduct = useSelector(state => state.wishlistProduct);
@@ -29,7 +29,7 @@ function Wishlist() {
                                             </div>
                                         </div>
                                         <div className="cart-price">
-                                            <span className="cart-value">Price : <span className="card-price">${value.price}</span></span>
+                                            <span className="cart-value">Price : <span className="card-price">Rs.{value.price}</span></span>
                                         </div>
                                         <button className="btn" onClick={() => removeWishlist(value)}>remove</button>
                                     </div>

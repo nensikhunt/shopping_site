@@ -9,10 +9,10 @@ function ProductAdd() {
         description: "",
         color: "",
         size: "",
-        price: "",
+        price: ""
     })
     const [imgfile, setimageFile] = useState({
-        images: []
+        image: ""
     })
 
     const productDataChange = (e) => {
@@ -24,7 +24,7 @@ function ProductAdd() {
     const productImageDataChange = (e) => {
         setimageFile({
             ...imgfile,
-            images: e.target.files[0]
+            image: e.target.files[0]
         })
     }
 
@@ -33,7 +33,7 @@ function ProductAdd() {
         token = localStorage.getItem("token");
         headers = { "token": token, "Content-type": "multipart/form-data" }
         const formData = new FormData();
-        formData.append('image', imgfile.images);
+        formData.append('image', imgfile.image);
         formData.append('title', productData.title);
         formData.append('description', productData.description);
         formData.append('color', productData.color);
@@ -70,7 +70,7 @@ function ProductAdd() {
                 Description:
                 <textarea cols={50} rows={5} type={"text"} name="description" value={productData.description} onChange={productDataChange} /> <br />
                 Image:
-                <input type={"file"} name="images" value={productData.images} onChange={productImageDataChange} /><br />
+                <input type={"file"} name="image" value={productData.image} onChange={productImageDataChange} /><br />
                 Color:
                 <input type={"text"} name="color" value={productData.color} onChange={productDataChange} /><br />
                 Size:

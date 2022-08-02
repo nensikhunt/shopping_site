@@ -1,0 +1,33 @@
+.payment-method-main{
+    width: 100%;
+    display: flex;
+}
+.payment-div{
+    border: 1px solid lightgrey;
+    width: 69%;
+    margin: 10px;
+    padding: 10px;
+}
+.cash-payment{
+    border: 1px solid lightgrey;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+#cash-icon{
+    font-size: 25px;
+    color: grey;
+}
+.order-outer{
+    display:flex
+}
+.order-inner1{
+    width:50%
+}
+.order-inner2{
+    width:50%;
+    margin:10px;
+}
+#order-btn{
+    margin:10px
+}

@@ -1,0 +1,43 @@
+.summary-method-main{
+    display: flex;
+    width: 100%;
+}
+.product-summary{
+    border: 1px solid lightgrey;
+    width: 69%;
+    margin: 10px;
+    padding: 10px;
+}
+.summary-product-detail{
+    width: 98%;
+    margin: 10px;
+    padding: 10px;
+}
+.summary-delivery-address{
+    width: 98%;
+    margin: 10px;
+    padding: 10px;
+}
+.summary-payment-method{
+    width: 98%;
+    margin: 10px;
+    padding: 10px;
+}
+#palceorder-btn{
+    width: 100%;
+}
+.delivery-summarry-address{
+    border: 1px solid lightgrey;
+    margin: 10px;
+    padding: 10px;
+}
+.cash-summary{
+    border: 1px solid lightgrey;
+    margin: 10px;
+    padding: 10px;
+}
+.summary-product{
+    border: 1px solid lightgrey;
+    margin: 10px;
+    padding: 10px;
+}

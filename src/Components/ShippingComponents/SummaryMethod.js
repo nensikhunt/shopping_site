@@ -1,14 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { decrementProductAction, incrementProductAction, removeProductAction, removeAllProductAction } from "../Store/Action/ProductAction";
-function SummaryMethod() {
+import { removeProductAction, removeAllProductAction } from "../../Store/Action/ProductAction";
+import PriceDetail from "./PriceDetail";
+import './SummaryMethod.css';
+function SummaryMethod(address) {
+    const props=address.address.detail;
     const cartProducts = useSelector(state => state.cartProduct);
     const dispatch = useDispatch();
     return (
-        <div style={{ display: "flex", width: "100%" }}>
-            <div style={{ border: "1px solid lightgrey", width: "69%", margin: "10px", padding: "10px" }}>
-                <div style={{ width: "98%", margin: "10px", padding: "10px" }}>
+        <div className="summary-method-main">
+            <div className="product-summary">
+                {/* <div className="summary-product-detail">
                     <h5>Product Details</h5>
+                    <div className="summary-product">
                     {
                         cartProducts.map((value, index) => {
                             return (
@@ -22,14 +26,14 @@ function SummaryMethod() {
                                         </div>
                                     </div>
                                     <div className="cart-price">
-                                        <span className="cart-value">Price : <span className="card-price">${value.sizes[0].price}</span></span>
+                                        <span className="cart-value">Price : <span className="card-price">Rs.{value.sizes[0].price}</span></span>
                                     </div>
                                     <div className="cart-quntity">
                                         <span className="cart-value">Quantity : <span className="card-price">{value.quantity}</span></span>
                                     </div>
                                     <div className="cart-total">
                                         <span className="cart-value">Total :&nbsp;
-                                            <span className="card-price">${value.sizes[0].price * value.quantity}</span>
+                                            <span className="card-price">Rs.{value.sizes[0].price * value.quantity}</span>
                                             <span className="card-price"></span>
                                         </span>
                                         <button className="btn" onClick={() => dispatch(removeProductAction(value))}>delete</button>
@@ -38,36 +42,27 @@ function SummaryMethod() {
                             )
                         })
                     }
-                </div>
-                <div style={{ width: "98%", margin: "10px", padding: "10px" }}>
+                    </div>
+                </div> */}
+                <div className="summary-delivery-address">
                     <h5>Delivery Address</h5>
+                    <div className="delivery-summarry-address">
+                    <h6>{props.name}</h6>
+                    <p>{props.housename},{props.areaname},{props.address},{props.city},<br />{props.state}-{props.pincode}<br />+91 {props.phonenumber}</p>
+                    </div>
                 </div>
-                <div style={{ width: "98%", margin: "10px", padding: "10px" }}>
+                <div className="summary-payment-method">
                     <h5>Payment Method</h5>
+                    <div className="cash-summary">
+                    <h5><i className="fa fa-dollar" id='cash-icon'></i> &nbsp;Cash on Delivery</h5>
+                    </div>
                 </div>
             </div>
-            <div style={{ borderLeft: "1px solid lightgrey", width: "29%", margin: "10px", padding: "10px" }}>
-                <h3>Price Details</h3>
-                <div style={{ display: "flex", width: "100%" }}>
-                    <div style={{ width: "50%" }}>
-                        <span>Total Product Price</span>
-                    </div>
-                    <div style={{ width: "50%", textAlign: "right" }}>
-                        <span>${cartProducts.reduce((total, item) => total + (item.sizes[0].price * item.quantity), 0)}</span>
-                    </div>
-                </div>
-                <hr style={{ height: "2px", width: "100%", borderWidth: "0", color: "gray", backgroundColor: "gray" }} />
-                <div style={{ display: "flex", width: "100%" }}>
-                    <div style={{ width: "50%" }}>
-                        <span>Order Total</span>
-                    </div>
-                    <div style={{ width: "50%", textAlign: "right" }}>
-                        <span>${cartProducts.reduce((total, item) => total + (item.sizes[0].price * item.quantity), 0)}</span>
-                    </div>
-                </div>
+            <div className="price-detail">
+                <PriceDetail />
                 <br />
                 <p>Clicking on 'Continue' will not deduct any money</p>
-                <Link className="btn btn-primary" to="/summarymethod" style={{ width: "100%" }}>Place Order</Link>
+                <Link className="btn btn-secondary" to="/thankyou" id="palceorder-btn">Place Order</Link>
             </div>
         </div>
     );

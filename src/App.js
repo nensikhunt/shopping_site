@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from './Components/Navbar';
+import Navbar from './Components/MainComponents/Navbar';
 import { BrowserRouter } from 'react-router-dom';
 // import { useSelector } from 'react-redux';
 // import { useDispatch } from 'react-redux';

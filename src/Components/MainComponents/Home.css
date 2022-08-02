@@ -1,0 +1,21 @@
+@import "react-slideshow-image/dist/styles.css";
+.slide-show-main-div{
+    width: 100%;
+    display: flex;
+}
+.slide-show-side-navbar{
+    width: 20%;
+}
+.slider-main-div{
+    width: 80%;
+}
+.slider-container{
+    width: 100%;
+}
+.each-slide{
+    width: 100%;
+}
+.imgages{
+    width: 100%;
+    height: 500px;
+}

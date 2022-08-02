@@ -1,0 +1,44 @@
+.address-method-main{
+    width: 100%;
+    display: flex;
+}
+.address-detail{
+    border: 1px solid lightgrey;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.delivery-address{
+    border: 1px solid lightgrey;
+    width: 69%;
+    margin: 10px;
+    padding: 10px;
+}
+#contact-icon{
+    color: grey;
+    font-size: 20px;
+}
+#address-icon{
+    color: grey;
+    font-size: 20px;
+}
+.address-input{
+    width: 98.5%;
+    margin: 5px;
+    padding: 5px;
+}
+.city-input{
+    width: 48.7%;
+    margin: 5px;
+    padding: 5px;
+}
+.address-btn{
+    width: 98%;
+    padding: 10px;
+    margin: 10px;
+}
+#address-btn{
+    width: 98.5%;
+    margin: 5px;
+    padding: 5px;
+}

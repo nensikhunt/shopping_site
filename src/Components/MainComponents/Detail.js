@@ -76,7 +76,7 @@ function Detail() {
                                 return (
                                     <div key={index} style={{ width: "30%", margin: "auto", boxShadow: "5px 5px 10px grey" }}>
                                         <h5>color : {value.color}</h5>
-                                        <h5>price : ${value.price}</h5>
+                                        <h5>price : Rs.{value.price}</h5>
                                         {
                                             size.map((value, index) => {
                                                 return (

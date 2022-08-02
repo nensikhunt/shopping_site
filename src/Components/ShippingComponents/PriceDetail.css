@@ -1,0 +1,29 @@
+.price-detail{
+    width: 30%;
+    border-left: 1px solid lightgrey;
+    margin: 10px;
+    padding: 20px;
+}
+.total-price{
+    display: flex;
+    width: 100%;
+}
+.total-price-inner1{
+    width: 50%
+}
+.total-price-inner2{
+    width: 50%;
+    text-align: right;
+}
+.price-detail-hr{
+    height: 2px;
+    width: 100%;
+    border-width: 0;
+    color: gray;
+    background-color: gray;
+}
+#continue-btn{
+    width: 100%;
+    /* margin: 5px; */
+    padding: 5px;
+}
