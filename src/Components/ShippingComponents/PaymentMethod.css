@@ -1,33 +1,115 @@
-.payment-method-main{
-    width: 100%;
+.summary-method-main{
     display: flex;
+    width: 100%;
 }
-.payment-div{
+.product-summary{
     border: 1px solid lightgrey;
     width: 69%;
     margin: 10px;
     padding: 10px;
 }
-.cash-payment{
-    border: 1px solid lightgrey;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
+#palceorder-btn{
+    width: 100%;
 }
-#cash-icon{
-    font-size: 25px;
+.payment-method-div{
+    width: 100%;
+    display: flex;
+}
+.payment-method-option{
+    width: 30%;
+}
+.payment-method-choose-option{
+    width: 70%;
+    padding: 30px;
+}
+.payment-method-choose-btn{
+    width: 100%;
+}
+.payment-option{
+    width: 100%;
+    border: 1px solid gainsboro;
+    display: flex;
+    height: 70px;
+}
+.payment-method-icon{
+    margin: auto; 
+    width: 20%;
+}
+.payment-method-name{
+    text-align: left; 
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 80%;
+    font-size: 15px;
+    font-weight: 495;
+}
+#payment-icon{
+    font-size: 20px;
     color: grey;
 }
-.order-outer{
-    display:flex
+.gift-main{
+    width: 98%;
+    display: flex;
+    border: 1px solid lightgray;
+    margin-top: 15px; 
+    padding: 15px;
 }
-.order-inner1{
-    width:50%
+
+
+/* cash on delivery methods css*/
+.cash-on-delivery-child{
+    display: flex;
+    width: 100%;
 }
-.order-inner2{
-    width:50%;
-    margin:10px;
+.random-number-div{
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    text-align: justify;
+    height: 80px;
+    font-size: 25px;
+    margin-top: 30px;
 }
-#order-btn{
-    margin:10px
+.change-random-number-div{
+    height: 80px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    color: #e38d8d;
+    width: 30%;
+    cursor: pointer;
+}
+.random-number-input{
+    margin-top: 30px;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    letter-spacing: 4px;
+    border: 1px solid lightgray;
+}
+
+/* credit card css */
+.credit-card-input{
+    margin-top: 25px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    width: 100%;
+}
+
+/* phone pe css */
+.phone-pe-main-parent{
+    font-size: 20px;
+}
+.phone-pe-input{
+    margin: 20px 0px;
+}
+.phone-pe-span{
+    margin-left: 20px;
 }

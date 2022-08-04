@@ -14,8 +14,8 @@ import ProductAdd from "../../ProductAddComponents/ProductAdd";
 import Register from "../../ProductAddComponents/Register";
 import Wishlist from "./Wishlist";
 import AddressMethod from "../ShippingComponents/AddressMethod";
-import PaymentMethod from "../ShippingComponents/PaymentMethod";
-import SummaryMethod from "../ShippingComponents/SummaryMethod";
+// import PaymentMethod from "../ShippingComponents/SummaryMethod";
+// import SummaryMethod from "../ShippingComponents/PaymentMethod";
 import ThankYou from "../ShippingComponents/ThankYou";
 
 function Navbar() {
@@ -38,9 +38,6 @@ function Navbar() {
                                 <Link className="nav-link" to="/product">Product</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/wishlist">WishList</Link>
-                            </li>
-                            <li className="nav-item">
                                 <Link className="nav-link" to="/signup">Signup</Link>
                             </li>
                             <li className="nav-item">
@@ -50,8 +47,11 @@ function Navbar() {
                                 <Link className="nav-link" to="/productadd">ProductAdd</Link>
                             </li>
                         </ul>
+                        <Link className="nav-link" to="/wishlist">
+                            <i className='far fa-heart' style={{ fontSize: "20px",margin:"0px 20px", color: "gray" }}></i>
+                        </Link>
                         <Link className="nav-link" to="/cart">
-                            <i className="fa fa-shopping-cart" style={{ fontSize: "36px", color: "#f7a099" }}></i>
+                            <i className="fa fa-shopping-cart" style={{ fontSize: "25px", color: "gray" }}></i>
                             <span style={{ fontSize: "20px", fontWeight: "400" }}>{cartItem}</span>
                         </Link>
                     </div>

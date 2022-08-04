@@ -1,43 +1,113 @@
 import { Link } from 'react-router-dom';
-import PriceDetail from './PriceDetail';
+import PriceDetail from "./PriceDetail";
 import './PaymentMethod.css';
+import CashOnDelivery from './PaymentModeMethods/CashOnDelivery';
 import { useState } from 'react';
-import SummaryMethod from './SummaryMethod';
-function PaymentMethod(props) {
-    const [address, setAddress] = useState(false)
-    const paymentship = () => {
-        setAddress(true);
+import PaymentOPtion from './PaymentModeMethods/PaymentOption';
+import CreditCard from './PaymentModeMethods/CreditCard';
+import PhonePe from './PaymentModeMethods/PhonePe';
+import Paytm from './PaymentModeMethods/Paytm';
+import NetBanking from './PaymentModeMethods/NetBanking';
+import PayLater from './PaymentModeMethods/PayLater';
+function PaymentMethod() {
+    const[cashOnDelivery,setCashOnDelivery]=useState(true);
+    const[creditCard,setCreditCard]=useState(false);
+    const[phonePe,setPhonePe]=useState(false);
+    const[paytm,setPaytm]=useState(false);
+    const[netBanking,setNetBanking]=useState(false);
+    const[payLater,setPayLater]=useState(false);
+
+    const cashOnDeliveryBtn=()=>{
+        setCashOnDelivery(true);
+        setCreditCard(false);
+        setPhonePe(false);
+        setPaytm(false);
+        setNetBanking(false);
+        setPayLater(false);
+    }
+    const creditCardBtn=()=>{
+        setCashOnDelivery(false);
+        setCreditCard(true);
+        setPhonePe(false);
+        setPaytm(false);
+        setNetBanking(false);
+        setPayLater(false);
+    }
+    const phonePeBtn=()=>{
+        setCashOnDelivery(false);
+        setCreditCard(false);
+        setPhonePe(true);
+        setPaytm(false);
+        setNetBanking(false);
+        setPayLater(false);
+    }
+    const paytmBtn=()=>{
+        setCashOnDelivery(false);
+        setCreditCard(false);
+        setPhonePe(false);
+        setPaytm(true);
+        setNetBanking(false);
+        setPayLater(false);
+    }
+    const netBankingBtn=()=>{
+        setCashOnDelivery(false);
+        setCreditCard(false);
+        setPhonePe(false);
+        setPaytm(false);
+        setNetBanking(true);
+        setPayLater(false);
+    }
+    const payLaterBtn=()=>{
+        setCashOnDelivery(false);
+        setCreditCard(false);
+        setPhonePe(false);
+        setPaytm(false);
+        setNetBanking(false);
+        setPayLater(true);
     }
     return (
         <>
-            {
-                address ? <SummaryMethod address={props} />
-                    : <div className='payment-method-main'>
-                        <div className='payment-div'>
-                            <h4>Payment Method</h4>
-                            <div className='cash-payment'>
-                                <h6>PAY IN CASH</h6>
-                                <h5><i className="fa fa-dollar" id='cash-icon'></i>&nbsp;Cash on Delivery &nbsp;<input type={"checkbox"} name={"cashondelivery"} value={"Cash on Delivery"} readOnly checked /></h5><br />
-                                <div className='order-outer'>
-                                    <div className='order-inner1'>
-                                        <h4>Reselling the Order?</h4>
-                                        <p>Click on 'Yes' to add Final Price</p>
-                                    </div>
-                                    <div className='order-inner2'>
-                                        <button className="btn btn-secondary" id='order-btn'>No</button>
-                                        <button className="btn btn-secondary" id='order-btn'>Yes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="price-detail">
-                            <PriceDetail />
-                            <br />
-                            <p>Clicking on 'Continue' will not deduct any money</p>
-                            <button className="btn btn-secondary" style={{ width: "100%" }} onClick={paymentship}>continue</button>
+            <span className='breadcrums'> l paymentmethod</span>
+            <div className="summary-method-main">
+                <div className="product-summary">
+                    <h6 style={{ margin: "10px" }}>Choose Payment Mode</h6>
+                    <div className='payment-method-div'>
+                        <PaymentOPtion clickFunction={[cashOnDeliveryBtn,creditCardBtn,phonePeBtn,paytmBtn,netBankingBtn,payLaterBtn]} />
+                        <div className='payment-method-choose-option' id='demo'>
+                            {
+                                cashOnDelivery&&<CashOnDelivery />
+                            }
+                            {
+                                creditCard&&<CreditCard />
+                            }
+                            {
+                                phonePe&&<PhonePe />
+                            }
+                            {
+                                paytm&&<Paytm />
+                            }
+                            {
+                                netBanking&&<NetBanking />
+                            }
+                            {
+                                payLater&&<PayLater />
+                            }
                         </div>
                     </div>
-            }
+                    <div className='gift-main'>
+                        <div style={{ width: "50%", textAlign: "left" }}>
+                            <i className="fa fa-gift" id="payment-icon"></i>
+                            <span style={{ margin: "10px", fontWeight: "500" }}>Have a Gift Card?</span>
+                        </div>
+                        <div style={{ width: "50%", textAlign: "right" }}>
+                            <Link to={"#"} style={{ textDecoration: "none", color: "#e38d8d" }}>APPLY GIFT CARD</Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="price-detail">
+                    <PriceDetail />
+                </div>
+            </div>
         </>
     );
 }

@@ -2,6 +2,10 @@
     width: 100%;
     display: flex;
 }
+.breadcrums{
+    color: darkgray;
+    cursor: pointer;
+}
 .address-detail{
     border: 1px solid lightgrey;
     margin: 10px;

@@ -1,9 +1,20 @@
-.card:hover{
-  box-shadow: 5px 4px 10px grey;
+.product-data-parent{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 0px 10px;
 }
-.notselected{
-background-color: pink;
+.product-data-child{
+  width: 20%;
+  border: 1px solid rgb(240, 239, 239);
+  margin: 20px;
 }
-.selected{
-  background-color: blue;
+.product-data-child:hover{
+  box-shadow: 5px 10px 4px lightgray;
+}
+.product-data-image{
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
 }

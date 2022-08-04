@@ -27,16 +27,16 @@ function Home() {
         <h4>men's wear</h4>
       </div>
       <div className='slider-main-div'>
-        <Fade>
+        <Zoom>
           {data?.map((slideImage, index) => (
-            <div className='slider-container'>
-              <div className="each-slide" key={index}>
+            <div className='slider-container' key={index}>
+              <div className="each-slide">
                 <img className='imgages' src={slideImage.url} />
                 {/* <h5 className='caption1'>{slideImage.caption}</h5> */}
               </div>
             </div>
           ))}
-        </Fade>
+        </Zoom>
       </div>
     </div>
   );

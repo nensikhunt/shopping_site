@@ -39,12 +39,19 @@ function Detail() {
                 console.log(e);
             })
     }, [])
-
+console.log(detail);
     return (
         <>
             <div className="detail">
                 <div className="detail-image">
-                    <img src={detail.images} className="detail-img-top" alt={detail.title} style={{ width: "500px", height: "500px", margin: "auto" }} />
+                    {
+                        detail.colors?.map((value,index)=>{
+                            return (
+                                // console.log(value.image)
+                                <img src={value.image} className="detail-img-top" alt={detail.title} style={{ width: "500px", height: "500px", margin: "auto" }} />
+                            )
+                        })
+                    }
                 </div>
                 <div className="detail-body">
                     <div className="detail-description">

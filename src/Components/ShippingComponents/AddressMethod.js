@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './AddressMethod.css';
-import PaymentMethod from './PaymentMethod';
 import PriceDetail from './PriceDetail';
+import SummaryMethod from './SummaryMethod';
 function AddressMethod() {
     const [data, setdata] = useState(false)
     const [detail, setDetail] = useState({
@@ -22,8 +22,6 @@ function AddressMethod() {
     }
     const addressSubmit = (e) => {
         e.preventDefault();
-        console.log(detail);
-
         if (detail.name === "" && detail.state === "" && detail.areaname === "" && detail.city === "" && detail.housename === "" && detail.phonenumber === "" && detail.pincode === "") {
             alert("plese fill teh required filed");
         } else {
@@ -32,6 +30,7 @@ function AddressMethod() {
     }
     return (
         <>
+            <span className='breadcrums'>cart l addressmethod</span>
             {!data &&
                 <div className="address-method-main">
                     <div className='delivery-address'>
@@ -59,7 +58,7 @@ function AddressMethod() {
                 </div>
             }
 
-            {data ? <PaymentMethod detail={detail}/>:""}
+            {data ? <SummaryMethod detail={detail}/>:""}
         </>
     );
 }

@@ -26,27 +26,22 @@ function Product() {
         dispatch(productAction(product.data.data));
     }
     return (
-        <>
-            <h4 className="cart-h4">Our Products</h4>
-            <div className="cart-main-div">
-                {
-                    effect &&
-                    products?.map((value, index) => {
-                        return (
-                            <div className="card m-9" key={index} style={{ border: "0.1px solid #f2f5fa", width: "18rem", margin: "10px" }}>
-                                <img key={index} src={value.images} className="card-img-top" alt="New Spring Fall" style={{ width: "200px", height: "200px", margin: "auto", cursor: "pointer" }} onClick={() => navigate(`/product/${value.id}`)} />
-                                <div className="card-body">
-                                    <h5 className="card-title" onClick={() => navigate(`/product/${value.id}`)} style={{ cursor: "pointer" }}>{value.title}</h5>
-                                    <button className="btn btn-secondary" onClick={() => dispatch(cartProductAction(value))}>Add To Cart</button><br />
-                                    <Link to={`/product/${value.id}`}>more detail</Link><br />
-                                    <i className='far fa-heart' onClick={() => dispatch(wishlistProductAction(value))}></i>
-                                </div>
+        <div className="product-data-parent">
+            {
+                effect &&
+                products?.map((value, index) => {
+                    return (
+                        <div className="product-data-child" key={index}>
+                            <img key={index} src={value.colors[0].image} className="product-data-image" alt="New Spring Fall" onClick={() => navigate(`/product/${value.id}`)} />
+                            <div className="product-item-data">
+                                <button style={{ width: "92%", margin: "10px" }} className="btn btn-secondary" onClick={() => dispatch(cartProductAction(value))}>Add To Cart</button>
+                                <button style={{ width: "92%", margin: "0px 10px 10px 10px" }} className="btn btn-secondary" onClick={() => dispatch(wishlistProductAction(value))}>Add To Wishlist</button>
                             </div>
-                        )
-                    })
-                }
-            </div>
-        </>
+                        </div>
+                    )
+                })
+            }
+        </div>
     );
 }
 

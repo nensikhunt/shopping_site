@@ -12,7 +12,7 @@ function ProductAdd() {
         price: ""
     })
     const [imgfile, setimageFile] = useState({
-        image: ""
+        image: []
     })
 
     const productDataChange = (e) => {
