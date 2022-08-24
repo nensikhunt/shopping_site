@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeAllWishlistProductAction, removeWishlistProductAction } from "../../Store/Action/ProductAction";
+import WishlistEmpty from "./WishlistEmpty";
 
 function Wishlist() {
     const wishlistProduct = useSelector(state => state.wishlistProduct);
@@ -11,7 +12,6 @@ function Wishlist() {
     }
     return (
         <>
-            <h4 className="cart-h4">your wish list</h4>
             {
                 wishlistProductLength > 0 ?
                     <>
@@ -38,9 +38,7 @@ function Wishlist() {
                         }
                     </> :
                     <div className="add-to-cart">
-                        <div className="cart-div-main">
-                            <h3>you have not add our product in Wishlist</h3>
-                        </div>
+                        <WishlistEmpty />
                     </div>
             }
         </>

@@ -1,0 +1,39 @@
+#profile-main{
+    display: inline-block;
+    position: relative;
+    color: gray;
+}
+.profile-icon{
+    position: relative;
+    display: inline-block;
+}
+.profile-main-div{
+    width: 345px;
+    display: none;
+    border-radius: 10px;
+    padding: 25%;
+    padding-top: 60%;
+    background-color: lightgray;
+    top: 90%;
+    right: -215%;
+    position: absolute;
+}
+#profile-main:hover .profile-main-div {
+    display: block;
+}
+#profile-btn{
+    background-color: lightgray;
+    color: gray;
+    margin-top: 2%;
+    border: 1px solid gainsboro;
+}
+#profile-btn:hover{
+    border-color: gray;
+}
+.profile-link{
+    color: gray;
+    text-decoration: none;
+}
+.profile-link:hover{
+    color: black;
+}

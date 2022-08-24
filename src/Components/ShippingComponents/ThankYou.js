@@ -1,17 +1,12 @@
+import "./ThankYou.css";
 function ThankYou() {
-    return ( 
-        <div className="container home-page">
-        <div className="row align-items-center vh-10">
-          <div className="col-6 mx-auto">
-            <div className="card shadow border">
-              <div className="card-body d-flex flex-column align-items-center">
-                <h2 className="card-text">Thank you for shopping with us.</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-     );
+  return (
+    <div className="thankyou-empty-main-div">
+      <i class="fa fa-heart" style={{ fontSize: "600%", margin: "5% 40%", color: "gray" }}></i>
+      <h5>Your Wishlist is Empty</h5>
+      <p>Create your first wishlist request</p>
+    </div>
+  );
 }
 
 export default ThankYou;

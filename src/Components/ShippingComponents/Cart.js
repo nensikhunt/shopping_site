@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Cart.css";
 import { decrementProductAction, incrementProductAction, removeProductAction, removeAllProductAction } from "../../Store/Action/ProductAction";
 import PriceDetail from "./PriceDetail";
+import CartEmpty from "./CartEmpty";
 
 function Cart() {
     const cartProducts = useSelector(state => state.cartProduct);
@@ -59,9 +60,7 @@ function Cart() {
                         </div>
                     </div> :
                     <div className="add-to-cart">
-                        <div className="cart-div-main">
-                            <h3>Your Shopping Cart is empty</h3>
-                        </div>
+                        <CartEmpty />
                     </div>
             }
         </>

@@ -54,12 +54,18 @@
     margin-top: 15px; 
     padding: 15px;
 }
-
+.payment-option:hover{
+    color: black;
+}
+.payment-option.active, .payment-option.active #payment-icon,.payment-option.active .payment-method-name{
+    background-color: white;
+    color: rgb(227, 141, 141);
+}
 
 /* cash on delivery methods css*/
 .cash-on-delivery-child{
     display: flex;
-    width: 100%;
+    width: 100%;    
 }
 .random-number-div{
     width: 70%;

@@ -1,0 +1,9 @@
+.thankyou-empty-main-div{
+    width: 50%;
+    margin: 5% auto;   
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    background-color: rgb(250, 249, 249);
+    text-align: center;
+    padding-bottom: 5%;
+}

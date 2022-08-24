@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { cartProductAction, productAction, wishlistProductAction } from '../../Store/Action/ProductAction';
+import Footer from "./Footer";
 
 function Product() {
     let token;
@@ -12,7 +13,7 @@ function Product() {
     const [effect, setEffect] = useState(false);
     const dispatch = useDispatch();
     useEffect(() => {
-        getproducts()
+        getproducts();
     }, [])
 
     const getproducts = async () => {
@@ -25,23 +26,39 @@ function Product() {
         setEffect(true);
         dispatch(productAction(product.data.data));
     }
+    console.log(products);
+
     return (
-        <div className="product-data-parent">
-            {
-                effect &&
-                products?.map((value, index) => {
-                    return (
-                        <div className="product-data-child" key={index}>
-                            <img key={index} src={value.colors[0].image} className="product-data-image" alt="New Spring Fall" onClick={() => navigate(`/product/${value.id}`)} />
-                            <div className="product-item-data">
-                                <button style={{ width: "92%", margin: "10px" }} className="btn btn-secondary" onClick={() => dispatch(cartProductAction(value))}>Add To Cart</button>
-                                <button style={{ width: "92%", margin: "0px 10px 10px 10px" }} className="btn btn-secondary" onClick={() => dispatch(wishlistProductAction(value))}>Add To Wishlist</button>
+        <>
+            <div className="product-data-parent">
+                {
+                    effect &&
+                    products?.map((value, index) => {
+                        return (
+                            <div className="product-data-child" key={index}>
+                                <div className="geek-image-fade">
+                                    <img key={index} src={value.colors[0].image} className="product-data-image" alt="New Spring Fall" onClick={() => navigate(`/product/${value.id}`)} />
+                                </div>
+                                {/* <div className="product-btn-addtocart">
+                                <button style={{ width: "92%", margin: "10px", marginTop: "55%" }} className="btn btn-secondary" id="addtocart-product-btn" onClick={() => { navigate(`/product/${value.id}`) }}>Add To Cart</button>
+                                dispatch(cartProductAction(value))
+                            </div> */}
+                                <div className="product-item-data">
+                                    <div className="product-detail-title-price">
+                                        <span style={{ margin: "10px" }}><strong>{value.title}</strong></span>
+                                        <div style={{ display: "flex", width: "100%", padding: "10px" }}>
+                                            <span style={{ float: "left", width: "70%" }}>Rs.{value.colors[0].price}</span>
+                                            <i className='far fa-heart' style={{ fontSize: "20px", width: "30%", color: "gray", textAlign: "right", cursor: "pointer" }} onClick={() => dispatch(wishlistProductAction(value))}></i>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    )
-                })
-            }
-        </div>
+                        )
+                    })
+                }
+            </div>
+            <Footer />
+        </>
     );
 }
 

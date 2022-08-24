@@ -1,0 +1,130 @@
+.side-navbar-parent {
+    padding: 10px 0px;
+}
+.side-navbar-child {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    margin-left: 5px;
+    border-left: 3px solid white;
+}
+.side-navbar-child:hover{
+    border-left: 3px solid gray;
+}
+
+.side-navbar-img {
+    display: inline-block;
+    width: 20%;
+}
+
+.side-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 5px;
+}
+
+.side-navbar-title {
+    width: 80%;
+    display: inline-block;
+}
+
+.side-title {
+    width: 100%;
+    height: 50px;
+    /* margin-left: 10px;/ */
+    font-size: large;
+    color: gray;
+    line-height: 2;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/** drop down content1  */
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    padding: 10px;
+    left: 20%;
+    top: 9.7%;
+    background-color: rgb(250, 249, 249);
+}
+
+.dropdown-content1 .drop {
+    text-decoration: none;
+    display: block;
+}
+
+.side-navbar-img .dropdown-content1,
+.side-navbar-title:hover .dropdown-content1 {
+    display: inline;
+}
+
+/**dropdown content2*/
+.dropdown-content2 {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    padding: 10px;
+    left: 20%;
+    top: 38%;
+    background-color: rgb(250, 249, 249);
+}
+
+.dropdown-content2 .drop {
+    text-decoration: none;
+    display: block;
+}
+
+.side-navbar-img .dropdown-content2,
+.side-navbar-title:hover .dropdown-content2 {
+    display: inline;
+}
+
+/**dropdown content3*/
+.dropdown-content3 {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    padding: 10px;
+    left: 20%;
+    top: 55%;
+    background-color: rgb(250, 249, 249);
+}
+
+.dropdown-content3 .drop {
+    text-decoration: none;
+    display: block;
+}
+
+.side-navbar-img .dropdown-content3,
+.side-navbar-title:hover .dropdown-content3 {
+    display: inline;
+}
+
+.dropdown-content-div {
+    display: flex;
+}
+
+.list {
+    margin: 2%;
+    width: 200px;
+}
+.list span{
+    font-size: large;
+    text-decoration: underline;
+    font-weight: 450;
+}
+.list .drop{
+    color: gray;
+}
+.list .drop:hover{
+    color: lightgray;
+}
+
+.side-list-image {
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,165 @@
+:root {
+    --footer-layer: rgba(22, 27, 25, 0.918);
+}
+
+[data-theme="dark"] {
+    --footer-layer: rgb(19 25 23 / 78%);
+}
+
+.main {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+.main-footer {
+    margin-top: 10px;
+    width: 100%;
+    background-color: transparent;
+    background-image: url("/public/slider-images/bg1.jpg");
+    margin: auto;
+    z-index: -1;
+    color: white;
+}
+
+.main-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--footer-layer);
+    z-index: 1;
+}
+
+/* navigate link footer link */
+.inner-div-footer {
+    color: white;
+    z-index: 2;
+    width: 25%;
+    padding: 3% 3%;
+}
+
+.navigation-link-footer {
+    display: flex;
+    width: 100%;
+    z-index: 2;
+    padding: 3%;
+    padding-bottom: 0%;
+}
+
+.inner-footer-contain {
+    color: white;
+    z-index: 2;
+    text-decoration: none;
+}
+
+.inner-div-footer .inner-footer-contain:hover {
+    text-decoration: underline lightgray 1px;
+    color: lightgray;
+}
+
+.inner-div-footer h5 {
+    color: gray;
+}
+
+.inner-div-footer span {
+    font-size: 17px;
+    text-decoration: underline;
+}
+
+/* social media link footer */
+.social-media-link-footer {
+    display: flex;
+    width: 100%;
+    z-index: 2;
+    padding: 3%;
+    padding-top: 0%;
+}
+
+.social-inner {
+    color: white;
+    z-index: 2;
+    width: 33%;
+    padding: 1%;
+}
+
+.social-inner h5 {
+    color: gray;
+}
+
+.social-inner-contain button {
+    width: 100%;
+    padding: 2%;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: lightgray;
+}
+
+.social-input input {
+    width: 85%;
+    padding: 2%;
+    font-size: 18px;
+    background-color: lightgray;
+}
+
+.social-input i {
+    width: 15%;
+    height: 42px;
+    margin-top: 0.5%;
+    color: black;
+    padding: 0%;
+    padding-top: 2%;
+    font-size: 28px;
+    text-align: center;
+    background-color: gray;
+}
+
+.social-span {
+    color: gray;
+    text-decoration: underline;
+    font-size: 13px;
+}
+.social-inner-contain-icon i{
+    font-size: 26px;
+    padding: 4%;
+}
+.social-h5{
+    margin-left: 2%;
+}
+
+/* shopping card footer */
+.shopping-card-footer{
+    display: flex;
+    width: 100%;
+    z-index: 2;
+    padding: 2%;
+}
+.shopping-card{
+    color: white;
+    z-index: 2;
+    width: 100%;
+    padding: 3%;
+    /* padding-bottom: 0%; */
+    border-bottom: 1px solid white;
+    display: flex;
+}
+.shopping-card i{
+    font-size: 30px;
+    padding: 0% 0.5%;
+}
+
+/* copy right footer */
+.copy-right-footer{
+    display: flex;
+    width: 100%;
+    z-index: 2;
+    padding: 2%;
+    padding-top: 0%;
+}
+.copy-right-footer h6{
+    color: white;
+    z-index: 2;
+    width: 100%;    
+    text-align: center;
+}

@@ -2,7 +2,7 @@ function PaymentOPtion(props) {
     return (
         <div className='payment-method-option'>
             <div className='payment-method-choose-btn'>
-                <button className='payment-option' onClick={props.clickFunction[0]}>
+                <button className='payment-option active' onClick={props.clickFunction[0]}>
                     <div className='payment-method-icon'>
                         <i className="fa fa-money" id="payment-icon"></i>
                     </div>
@@ -54,5 +54,4 @@ function PaymentOPtion(props) {
         </div>
     );
 }
-
 export default PaymentOPtion;

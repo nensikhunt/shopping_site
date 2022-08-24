@@ -1,0 +1,14 @@
+.navbar{
+    background-color: lightgray;
+    font-size: large;
+    font-weight: 500;
+ }
+ #navbar{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0%;
+    z-index: 500;
+ }
+/* .navbar .nav-link:hover,.fa:hover,.far:hover{
+    color: white;
+} */
